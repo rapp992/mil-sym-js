@@ -2679,7 +2679,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.scaleModifiers = function(tg) {
       modifier = modifiers.get(j);
       if (modifier.type === armyc2.c2sd.JavaTacticalRenderer.Modifier2.toEnd)
         continue;
-      if (modifier.type === armyc2.c2sd.JavaTacticalRenderer.Modifier2.aboveMiddle && isChange1Area === false)
+      if (modifier.type === armyc2.c2sd.JavaTacticalRenderer.Modifier2.aboveMiddle && isChange1Area === 0)
         continue;
       if (modifier.lineFactor < minLF)
         minLF = modifier.lineFactor;
@@ -3541,9 +3541,31 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
       case 24323100:
       case 24325100:
       case 24351000:
-        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, label, 3, -1 * csFactor, ptCenter, ptCenter, new Boolean(false));
-        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_Name(), 3, 0, ptCenter, ptCenter, new Boolean(false));
-        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_DTG() + dash + tg.get_DTG1(), 3, 1 * csFactor, ptCenter, ptCenter, new Boolean(false), "W+W1");
+        // the number of modifiers that will be added (additional info modifiers will not be added if empty, but label, name and dtg's always will)
+        var modifierCount = 3 + [tg.get_H(), tg.get_H1(), tg.get_H2(), tg.get_H3()].filter(Boolean).length;
+        // calculate the line factor of the upper most modifier, so that all the modifiers are centered around line 0 and with one line between each
+        var minLineFactor = 0.5 - modifierCount / 2;
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, label, 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false));
+        minLineFactor++;
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_Name(), 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false));
+        minLineFactor++;
+        if (tg.get_H()) {
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, "REST FS SYS: " + tg.get_H(), 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false), "H");
+          minLineFactor++;
+        }
+        if (tg.get_H1()) {
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, "REST AMMO: " + tg.get_H1(), 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false), "H1");
+          minLineFactor++;
+        }
+        if (tg.get_H2()) {
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, "REST FUSE: " + tg.get_H2(), 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false), "H2");
+          minLineFactor++;
+        }
+        if (tg.get_H3()) {
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, "REST CAL: " + tg.get_H3(), 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false), "H3");
+          minLineFactor++;
+        }
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_DTG() + dash + tg.get_DTG1(), 3, minLineFactor * csFactor, ptCenter, ptCenter, new Boolean(false), "W+W1");
         break;
       case 24361000:
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, label, 3, -1 * csFactor, ptCenter, ptCenter, new Boolean(false));

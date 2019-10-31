@@ -1717,6 +1717,11 @@ sec.web.renderer.MultiPointHandler = (function () {
                 else if (modifiers.additionalInfo3)
                     modifierMap[ModifiersTG.H2_ADDITIONAL_INFO_3] = modifiers.additionalInfo3;
 
+                if (modifiers[ModifiersTG.H3_ADDITIONAL_INFO_4])
+                    modifierMap[ModifiersTG.H3_ADDITIONAL_INFO_4] = modifiers[ModifiersTG.H3_ADDITIONAL_INFO_4];
+                else if (modifiers.additionalInfo3)
+                    modifierMap[ModifiersTG.H3_ADDITIONAL_INFO_4] = modifiers.additionalInfo3;
+
                 if (modifiers[ModifiersTG.N_HOSTILE])
                     modifierMap[ModifiersTG.N_HOSTILE] = modifiers[ModifiersTG.N_HOSTILE];
                 else if (modifiers.hostile)

@@ -72,6 +72,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
             modifiers.put("H", tg.get_H());
             modifiers.put("H1", tg.get_H1());
             modifiers.put("H2", tg.get_H2());
+            modifiers.put("H3", tg.get_H3());
             modifiers.put("T", tg.get_Name());
             modifiers.put("T1", tg.get_T1());
             modifiers.put("Y", tg.get_Location());
@@ -367,6 +368,8 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
                 tg.set_H1(milStd.getModifier("H1"));
             if (milStd.getModifier("H2") !== null)
                 tg.set_H2(milStd.getModifier("H2"));
+            if (milStd.getModifier("H3") !== null)
+                tg.set_H3(milStd.getModifier("H3"));
             if (milStd.getModifier("T") !== null)
                 tg.set_Name(milStd.getModifier("T"));
             if (milStd.getModifier("T1") !== null)
