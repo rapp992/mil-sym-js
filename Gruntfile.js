@@ -12,13 +12,16 @@ module.exports = function (grunt) {
             },
             milsym: {
                 files: {
-                    '../src/mapengine/worldwind/renderer/savm-bc.min.js': manifest.milsym
+                    'dist/savm-bc.min.js': manifest.milsym
                 }
             }
-        }
+        },
+        clean: ['dist']
     })
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-clean');
 
     grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('clean', ['clean'])
 }
