@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             },
             milsym: {
                 files: {
-                    'dist/savm-bc.min.js': manifest.milsym
+                    '../dist/savm-bc.min.js': manifest.milsym
                 }
             }
         },
