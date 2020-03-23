@@ -12,15 +12,15 @@ module.exports = function (grunt) {
             },
             milsym: {
                 files: {
-                    '../dist/savm-bc.min.js': manifest.milsym
+                    '../dist/mil-sym-js/savm-bc.min.js': manifest.milsym
                 }
             }
         },
         copy: {
             fonts: {
                 files: [
-                    {expand: true, cwd: 'web/js/src', src: 'fonts/*', dest: '../dist/'},
-                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist/'}
+                    {expand: true, cwd: 'web/js/src', src: 'fonts/*', dest: '../dist/mil-sym-js'},
+                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist/mil-sym-js'}
                 ]
             }
         },
