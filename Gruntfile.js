@@ -19,8 +19,8 @@ module.exports = function (grunt) {
         copy: {
             fonts: {
                 files: [
-                    {expand: true, cwd: 'web/js/src', src: 'fonts/*', dest: '../dist/resources/fonts'},
-                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist'}
+                    {expand: true, cwd: 'web/js/src', src: 'fonts/*', dest: '../dist/resources'},
+                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist/resources'}
                 ]
             }
         },
