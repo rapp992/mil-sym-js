@@ -16,12 +16,21 @@ module.exports = function (grunt) {
                 }
             }
         },
+        copy: {
+            fonts: {
+                files: [
+                    {expand: true, cwd: 'web/js/src', src: 'fonts/*', dest: '../dist/'},
+                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist/'}
+                ]
+            }
+        },
         clean: ['dist']
     })
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['uglify', 'copy']);
     grunt.registerTask('clean', ['clean'])
 }
