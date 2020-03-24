@@ -20,7 +20,7 @@ module.exports = function (grunt) {
             fonts: {
                 files: [
                     {expand: true, cwd: 'web/js/src', src: 'fonts/*', dest: '../dist/resources'},
-                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist/resources'}
+                    {expand: true, cwd: 'web/js/src', src: 'renderer.css', dest:'../dist'}
                 ]
             }
         },
