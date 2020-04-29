@@ -1886,6 +1886,9 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOAW---****X", (23134000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOMC---****X", (23157000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOFD---****X", (23162000));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOFDI--****X", (23162000));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOFDC--****X", (24325300));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOFDR--****X", (24326101));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOFG---****X", (23163000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOFA---****X", (23164000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*MPOEB---****X", (23171000));
