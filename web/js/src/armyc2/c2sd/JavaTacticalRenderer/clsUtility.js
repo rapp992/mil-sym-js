@@ -1809,6 +1809,9 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGLP---****X", (22124000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGLL---****X", (22125000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAG---****X", (22131000));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGC--****X", (24325300));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGR--****X", (24326101));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGI--****X", (22131000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAA---****X", (22132000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAE---****X", (22133000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAF---****X", (22134000));
