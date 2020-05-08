@@ -1413,6 +1413,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
     var j = 0;
     var mbrPoly = null;
     switch (tg.get_LineType()) {
+      case 23162100:
       case 24311000:
       case 24322200:
       case 24323200:
@@ -2644,6 +2645,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.scaleModifiers = function(tg) {
     if (!isClosedPolygon && !isChange1Area)
       return;
     switch (linetype) {
+      case 23162200:
       case 24326200:
       case 24326100:
       case 24326101:
@@ -2827,6 +2829,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
       case 24260000:
       case 23163000:
       case 23162000:
+      case 23162100:
       case 22622000:
       case 25211000:
       case 25212000:
@@ -4287,6 +4290,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
       case 22623000:
       case 22612001:
       case 22623001:
+      case 23162200:
       case 24323200:
       case 24324200:
       case 24325200:
@@ -4475,6 +4479,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
       case 24323300:
       case 24324300:
       case 24325300:
+      case 23162100:
         rfaLines = armyc2.c2sd.JavaTacticalRenderer.Modifier2.getRFALines(tg);
         ptCenter = armyc2.c2sd.JavaLineArray.lineutility.MidPointDouble(tg.Pixels.get(0), tg.Pixels.get(51), 0);
         switch (rfaLines) {
@@ -4652,6 +4657,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
           armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_DTG1(), 1, 1, pt2, pt1);
         }
         break;
+      case 23162200:
       case 24326100:
       case 24326101:
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralModifier(tg, label, 2, 0, 0, 1, new Boolean(true));

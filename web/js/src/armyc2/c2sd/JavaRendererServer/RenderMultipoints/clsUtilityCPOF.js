@@ -135,6 +135,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                     radius.value[0] = Double.parseDouble(tg.get_H());   //buffer
                     break;
                 case 15000002:
+                case 23162100:
                 case 24312000:
                 case 24321300:
                 case 24323300:
@@ -168,6 +169,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                     if(std===armyc2.c2sd.renderer.utilities.RendererSettings.Symbology_2525C)//value passed in degrees
                         attitude.value[0] = Double.parseDouble(tg.get_H2());
                     break;
+                case 23162200:
                 case 24326101:
                 case 24321200:
                 case 24323200:
@@ -321,6 +323,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                         tg.Pixels.add(pt1);
                     }                    
                     break;
+                case 23162200:
                 case 24326101:
                 case 24321200:
                 case 24323200:
@@ -379,6 +382,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                     break;
                 case 24312000:
                 case 15000002:
+                case 23162100:
                 case 24321300:
                 case 24322300:
                 case 24323300:
@@ -1660,6 +1664,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                 return;
             var linetype = tg.get_LineType();
             switch (linetype) {
+                case 23162200:
                 case 24326101:
                 case 24321200:
                 case 24323200:
