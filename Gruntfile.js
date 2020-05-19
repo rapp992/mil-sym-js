@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         uglify: {
             options: {
+                beautify: true,
                 sourceMap: true,
                 mangle: false,
                 screwIE8: true,
