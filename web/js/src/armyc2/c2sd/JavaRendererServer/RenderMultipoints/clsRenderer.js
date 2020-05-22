@@ -236,6 +236,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
                 tg.set_H1(strH1);
             }
             switch (lineType) {
+                case 22131200:
                 case 23162100:
                 case 23162200:
                 case 24326101:
@@ -852,6 +853,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
                     break;
             }
             switch (lineType) {
+                case 22131200:
                 case 23162100:
                 case 23162200:
                 case 24326101:

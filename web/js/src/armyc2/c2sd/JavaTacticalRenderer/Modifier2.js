@@ -1413,6 +1413,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
     var j = 0;
     var mbrPoly = null;
     switch (tg.get_LineType()) {
+      case 22131200:
       case 23162100:
       case 24311000:
       case 24322200:
@@ -4265,6 +4266,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
       case 212500000:
       case 211200000:
       case 211210000:
+      case 22131200:
       case 24322200:
       case 24322300:
       case 24311000:
@@ -4460,6 +4462,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
         ptCenter = armyc2.c2sd.JavaLineArray.lineutility.CalcCenterPointDouble2(tg.Pixels.toArray(), tg.Pixels.size());
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_Name(), 3, 0, ptCenter, ptCenter, new Boolean(false));
         break;
+      case 22131200:
       case 24321300:
       case 24331300:
       case 24332300:

@@ -135,6 +135,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                     radius.value[0] = Double.parseDouble(tg.get_H());   //buffer
                     break;
                 case 15000002:
+                case 22131200:
                 case 23162100:
                 case 24312000:
                 case 24321300:
@@ -382,6 +383,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
                     break;
                 case 24312000:
                 case 15000002:
+                case 22131200:
                 case 23162100:
                 case 24321300:
                 case 24322300:

@@ -64,6 +64,7 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
                 result = 1;
                 break;
             case 15000002:
+            case 22131200:
             case 23162100:
             case 24312000:
             case 24321300:
@@ -1120,6 +1121,7 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
                 case 13000002:  //pbs 
                 case 15000002:
                 case 24311000:
+                case 22131200:
                 case 14000001:
                 case 14000002:
                 case 23162200:
@@ -1810,7 +1812,7 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGLP---****X", (22124000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGLL---****X", (22125000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAG---****X", (22131000));
-            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGC--****X", (13000002));
+            armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGC--****X", (22131200));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGR--****X", (14000000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAGI--****X", (22131000));
             armyc2.c2sd.JavaTacticalRenderer.clsUtility.linetypes.put("G*GPGAA---****X", (22132000));
