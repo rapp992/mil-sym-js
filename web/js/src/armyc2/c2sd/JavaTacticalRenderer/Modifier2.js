@@ -150,6 +150,8 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.GetCenterLabel = function(tg) {
         label = "AA";
         break;
       case 22133000:
+      case 22133100:
+      case 22133200:
         label = "EA";
         break;
       case 22135000:
@@ -2783,9 +2785,6 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
     var dist = 0;
     var dist2 = 0;
     var midPt = null;
-    var isChange1Area = armyc2.c2sd.JavaTacticalRenderer.clsUtility.IsChange1Area(tg.get_LineType(), null);
-    if (isChange1Area)
-      return;
     var clipRect = null;
     var clipArray = null;
     if (clipBounds !== null && clipBounds instanceof java.util.ArrayList) {
@@ -2885,6 +2884,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
       case 22624000:
       case 22132000:
       case 22133000:
+      case 22133100:
       case 22135000:
       case 22136000:
       case 22137000:
@@ -3775,6 +3775,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
         break;
       case 22132000:
       case 22133000:
+      case 22133100:
       case 22135000:
       case 22136000:
       case 22137000:
