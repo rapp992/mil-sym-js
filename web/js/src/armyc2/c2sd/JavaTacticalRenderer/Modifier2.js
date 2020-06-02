@@ -1415,6 +1415,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
     var j = 0;
     var mbrPoly = null;
     switch (tg.get_LineType()) {
+      case 22133100:
       case 22131200:
       case 23162100:
       case 24311000:
@@ -2884,7 +2885,6 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
       case 22624000:
       case 22132000:
       case 22133000:
-      case 22133100:
       case 22135000:
       case 22136000:
       case 22137000:
@@ -3775,7 +3775,6 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
         break;
       case 22132000:
       case 22133000:
-      case 22133100:
       case 22135000:
       case 22136000:
       case 22137000:
@@ -4247,6 +4246,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
     var linetype = tg.get_LineType();
     //diagnostic add early exit for lines which do not use this function
     switch (linetype) {
+      case 22133100:
       case 14000000:
       case 15000003:
       case 21200000:
@@ -4463,6 +4463,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
         ptCenter = armyc2.c2sd.JavaLineArray.lineutility.CalcCenterPointDouble2(tg.Pixels.toArray(), tg.Pixels.size());
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_Name(), 3, 0, ptCenter, ptCenter, new Boolean(false));
         break;
+      case 22133100:
       case 22131200:
       case 24321300:
       case 24331300:
