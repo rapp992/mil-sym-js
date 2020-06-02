@@ -1415,6 +1415,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
     var j = 0;
     var mbrPoly = null;
     switch (tg.get_LineType()) {
+      case 22133200:
       case 22133100:
       case 22131200:
       case 23162100:
@@ -2598,6 +2599,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.getChange1Height = function(tg) {
   var height = 0;
   try {
     switch (tg.get_LineType()) {
+      case 22133200:
       //case 24326101:
       case 24321200:
       case 24323200:
@@ -4246,6 +4248,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
     var linetype = tg.get_LineType();
     //diagnostic add early exit for lines which do not use this function
     switch (linetype) {
+      case 22133200:
       case 22133100:
       case 14000000:
       case 15000003:
@@ -4625,6 +4628,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
             break;
         }
         break;
+      case 22133200:
       case 24321200:
       case 24331200:
       case 24332200:

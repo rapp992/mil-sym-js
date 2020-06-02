@@ -93,6 +93,7 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
                 result = 1;
                 break;
             case 23162200:
+            case 22133200:
             case 24326101:
             case 24321200:
             case 24323200:
@@ -1117,6 +1118,7 @@ armyc2.c2sd.JavaTacticalRenderer.clsUtility = {
                         minPoints.value[0] = 1;
                     }
                     return false;
+                case 22133200:
                 case 13000000:  //bs_ellipse
                 case 13000001:  //pbs ellipse
                 case 13000002:  //pbs 
