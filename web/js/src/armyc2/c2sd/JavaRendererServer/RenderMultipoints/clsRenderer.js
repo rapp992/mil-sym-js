@@ -112,6 +112,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
             }
             switch (lineType) {
                 case 22133200:
+                case 22131300:
                 case 22231000:
                 case 22232000:
                 case 22233000:
@@ -238,6 +239,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
             }
             switch (lineType) {
                 case 22133200:
+                case 22131300:
                 case 22131200:
                 case 23162100:
                 case 23162200:
@@ -634,12 +636,14 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
             }
             switch (lineType) {
                 case 22133200:
+                case 22131300:
                 case 22231000:
                 case 22232000:
                 case 22233000:
                 case 22234000:
                 case 22234100:
                 case 22234200:
+                case 23162200:
                 case 24322100:
                 case 24322200:
                 case 24322300:
@@ -857,6 +861,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
             }
             switch (lineType) {
                 case 22133200:
+                case 22131300:
                 case 22133100:
                 case 22131200:
                 case 23162100:
