@@ -1427,6 +1427,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
       case 24325200:
       case 24352000:
       case 24362000:
+      case 23162200:
       case 24321200:
       case 24331200:
       case 24332200:
@@ -2601,6 +2602,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.getChange1Height = function(tg) {
   try {
     switch (tg.get_LineType()) {
       case 22133200:
+      case 23162200:
       //case 24326101:
       case 24321200:
       case 24323200:
@@ -2652,7 +2654,6 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.scaleModifiers = function(tg) {
     if (!isClosedPolygon && !isChange1Area)
       return;
     switch (linetype) {
-      case 23162200:
       case 24326200:
       case 24326100:
       case 24326101:
@@ -4636,6 +4637,36 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
             break;
         }
         break;
+      case 23162200:
+        ptLeft = armyc2.c2sd.JavaLineArray.lineutility.MidPointDouble(tg.Pixels.get(0), tg.Pixels.get(1), 0);
+        ptRight = armyc2.c2sd.JavaLineArray.lineutility.MidPointDouble(tg.Pixels.get(2), tg.Pixels.get(3), 0);
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier2(tg, label, 2, 0, ptLeft, ptRight, false);
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier2(tg, tg.get_Name(), 2, 1 * csFactor, ptLeft, ptRight, false);
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_Name(), 3, 1 * csFactor, ptCenter, ptCenter, new Boolean(false));
+        pt0 = tg.Pixels.get(0);
+        pt1 = tg.Pixels.get(1);
+        pt2 = tg.Pixels.get(2);
+        pt3 = tg.Pixels.get(3);
+        if (tg.get_Client().equalsIgnoreCase("ge")) {
+          pt0.x -= Math.floor(font.getSize() / 2);
+          pt2.x -= Math.floor(font.getSize() / 2);
+        }
+        if (!tg.get_Client().equalsIgnoreCase("ge")) {
+          armyc2.c2sd.JavaTacticalRenderer.clsUtility.shiftModifiersLeft(pt0, pt3, 12.5);
+          armyc2.c2sd.JavaTacticalRenderer.clsUtility.shiftModifiersLeft(pt1, pt2, 12.5);
+        }
+        if (ptLeft.x === ptRight.x)
+          ptRight.x += 1;
+        if (ptLeft.x < ptRight.x) {
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_H(), 1, 0, pt2, pt1);
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_DTG(), 1, 0, pt0, pt3);
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_DTG1(), 1, 1 * csFactor, pt0, pt3);
+        } else {
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_H(), 1, 0, pt0, pt3);
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_DTG(), 1, 0, pt2, pt1);
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_DTG1(), 1, 1, pt2, pt1);
+        }
+        break;
       case 22133200:
       case 24321200:
       case 24331200:
@@ -4674,7 +4705,6 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
           armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifier(tg, tg.get_DTG1(), 1, 1, pt2, pt1);
         }
         break;
-      case 23162200:
       case 24326100:
       case 24326101:
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralModifier(tg, label, 2, 0, 0, 1, new Boolean(true));
