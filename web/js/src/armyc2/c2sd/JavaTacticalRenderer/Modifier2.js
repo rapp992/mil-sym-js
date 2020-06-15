@@ -1418,6 +1418,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
       case 22133200:
       case 22133100:
       case 22131200:
+      case 22131300:
       case 23162100:
       case 24311000:
       case 24322200:
@@ -2832,7 +2833,6 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
       case 24260000:
       case 23163000:
       case 23162000:
-      case 23162100:
       case 22622000:
       case 25211000:
       case 25212000:
@@ -4271,6 +4271,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
       case 211200000:
       case 211210000:
       case 22131200:
+      case 22131300:
       case 24322200:
       case 24322300:
       case 24311000:
@@ -4296,6 +4297,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
       case 22623000:
       case 22612001:
       case 22623001:
+      case 23162100:
       case 23162200:
       case 24323200:
       case 24324200:
@@ -4468,6 +4470,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
         break;
       case 22133100:
       case 22131200:
+      case 22131300:
       case 24321300:
       case 24331300:
       case 24332300:
@@ -4484,10 +4487,15 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiers2 = function(tg) {
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddOffsetModifier(tg, tg.get_DTG(), 1, -1 * csFactor, Math.floor(tg.Pixels.size() / 2), 0, 4, "left");
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddOffsetModifier(tg, tg.get_DTG1(), 1, 0, Math.floor(tg.Pixels.size() / 2), 0, 4, "left");
         break;
+      case 23162100:
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddOffsetModifier(tg, tg.get_H(), 1, -1 * csFactor, Math.floor(tg.Pixels.size() / 4) * 3, 0, 4, "left");
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddOffsetModifier(tg, tg.get_DTG(), 1, -1 * csFactor, Math.floor(tg.Pixels.size() / 4), 0, 4, "left");
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddOffsetModifier(tg, tg.get_DTG1(), 1, -1 * csFactor, Math.floor(tg.Pixels.size() / 4), 0, 4, "left");
+          armyc2.c2sd.JavaTacticalRenderer.Modifier2.areasWithENY(tg, g2d);
+          break;
       case 24323300:
       case 24324300:
       case 24325300:
-      case 23162100:
         rfaLines = armyc2.c2sd.JavaTacticalRenderer.Modifier2.getRFALines(tg);
         ptCenter = armyc2.c2sd.JavaLineArray.lineutility.MidPointDouble(tg.Pixels.get(0), tg.Pixels.get(51), 0);
         switch (rfaLines) {
