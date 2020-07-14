@@ -655,6 +655,7 @@ return{
                         symbolId.equals("AAM---") || // MEZ
                         symbolId.equals("AAML--") || // LOMEZ
                         symbolId.equals("AAMH--")) // HIMEZ
+
                 {
                     output = Shape3DHandler.buildPolygon(controlPoints, id, name, 
                         description, lineColor, fillColor, attributes);
@@ -665,7 +666,8 @@ return{
                         symbolId.equals("ALM---") || // MRR
                         symbolId.equals("ALS---") || // SAAFR
                         symbolId.equals("ALU---") || // unmanned aircraft
-                        symbolId.equals("ALL---"))   // LLTR
+                        symbolId.equals("ALL---") || // LLTR
+                        symbolId.equals("LCM---")) //MLP
                 {
                     output = Shape3DHandler.buildTrack(controlPoints, id, name, 
                         description, lineColor, fillColor, attributes);

@@ -212,7 +212,8 @@ sec.web.renderer.utilities.JavaRendererUtilities = {};
                 symbolId === "AAH---" ||
                 symbolId === "AAM---" || // MEZ
                 symbolId === "AAML--" || // LOMEZ
-                symbolId === "AAMH--")  // HIMEZ
+                symbolId === "AAMH--" ||  // HIMEZ
+                symbolId === "LCM---")  
             {                        
 
                 try 
@@ -239,6 +240,10 @@ sec.web.renderer.utilities.JavaRendererUtilities = {};
                         if (jsonAltitudeArray && jsonAltitudeArray.length >= 2)
                         {
                             returnValue = true;                                    
+                        }
+                        else if (symbolId === "LCM---") 
+                        {
+                            returnValue = true;
                         }
                         else if((jsonAltitudeArray) && (jsonAltitudeArray.length === 1) && (symbolId === "AKPC--" || // Kill box circular
                                                                     symbolId === "AKPR--" || // Kill box rectangular

@@ -314,12 +314,13 @@ sec.web.renderer.Shape3DHandler.buildTrack = function (controlPoints, id, name, 
         var numX=attributes.X_ALTITUDE_DEPTH.size();
         var nextToLastAlt=attributes.X_ALTITUDE_DEPTH.get(numX-2);
         var lastAlt=attributes.X_ALTITUDE_DEPTH.get(numX-1);
-        var lastWidth=attributes.AM_DISTANCE.get(numAM-1);
-        var delta=2*(numberOfPoints-1)-numAM;   //one width per segment
-        if(delta>0)
-            for(var j=0;j<delta;j++)
-                attributes.AM_DISTANCE.add(lastWidth);
-
+        if(numAM > 0) {
+            var lastWidth=attributes.AM_DISTANCE.get(numAM-1);
+            var delta=2*(numberOfPoints-1)-numAM;   //one width per segment
+            if(delta>0)
+                for(var j=0;j<delta;j++)
+                    attributes.AM_DISTANCE.add(lastWidth);
+        }
         delta=2*(numberOfPoints-1)-numX;    //two alts per segment
         var j=0;
         while(j<delta)
@@ -355,8 +356,10 @@ sec.web.renderer.Shape3DHandler.buildTrack = function (controlPoints, id, name, 
                 }
                 route.addPoint ( new sec.geo.GeoPoint (point1lon, point1lat));
                 route.addPoint ( new sec.geo.GeoPoint (point2lon, point2lat));
-                route.setLeftWidth ((attributes.AM_DISTANCE.get (2 * i)).doubleValue ());
-                route.setRightWidth ((attributes.AM_DISTANCE.get (2 * i + 1)).doubleValue ());
+                if(numAM > 0) {
+                    route.setLeftWidth ((attributes.AM_DISTANCE.get (2 * i)).doubleValue ());
+                    route.setRightWidth ((attributes.AM_DISTANCE.get (2 * i + 1)).doubleValue ());
+                }
                 route.setMinAltitude ((attributes.X_ALTITUDE_DEPTH.get (2 * i)).doubleValue ());
                 route.setMaxAltitude ((attributes.X_ALTITUDE_DEPTH.get (2 * i + 1)).doubleValue ());
                 track.addRoute (route);
