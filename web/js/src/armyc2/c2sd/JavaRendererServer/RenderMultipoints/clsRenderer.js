@@ -643,6 +643,7 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsRenderer = {
                 case 22234000:
                 case 22234100:
                 case 22234200:
+                case 23162200:
                 case 24322100:
                 case 24322200:
                 case 24322300:
