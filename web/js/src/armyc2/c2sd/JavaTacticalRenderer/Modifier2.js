@@ -4164,8 +4164,10 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.addSectorModifiers = function(tg, con
 
   var n = tg.Pixels.size();
   //pt0 and pt1 are points for the location indicator
-  var pt0 = tg.Pixels.get(n - 5);
-  var pt1 = tg.Pixels.get(n - 4);
+  var pt0 = tg.anchor0F;
+  var pt1 = tg.achorTipF;
+  // var pt0 = tg.Pixels.get(n - 5);
+  // var pt1 = tg.Pixels.get(n - 4);
   var pt02d = new armyc2.c2sd.graphics2d.Point2D(pt0.x, pt0.y);
   var pt12d = new armyc2.c2sd.graphics2d.Point2D(pt1.x, pt1.y);
   pt02d = converter.PixelsToGeo(pt02d);
