@@ -946,13 +946,17 @@ armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF = {
             ptTipF = armyc2.c2sd.JavaLineArray.lineutility.ExtendAlongLineDouble(pt0F, pt1F, dist + basex2);//was 20
             ptLeftF = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0F, ptBaseF, ptBaseF, 0, base);//was 10
             ptRightF = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0F, ptBaseF, ptBaseF, 1, base);//was 10
-            tg.Pixels.add(pt0F);
-            ptTipF.style = 5;
-            tg.Pixels.add(ptTipF);
-            tg.Pixels.add(ptLeftF);
-            ptTipF.style = 0;
-            tg.Pixels.add(ptTipF);
-            tg.Pixels.add(ptRightF);
+            tg.anchor0F = pt0F;
+            tg.achorTipF = ptTipF;
+            if (tg.h !== "false") {
+                tg.Pixels.add(pt0F);
+                ptTipF.style = 5;
+                tg.Pixels.add(ptTipF);
+                tg.Pixels.add(ptLeftF);
+                ptTipF.style = 0;
+                tg.Pixels.add(ptTipF);
+                tg.Pixels.add(ptRightF);
+            }
         } catch (exc) {
             if (Clazz.instanceOf(exc)) {
                 armyc2.c2sd.renderer.utilities.ErrorLogger.LogException(armyc2.c2sd.JavaRendererServer.RenderMultipoints.clsUtilityCPOF._className, "RangeFanOrientation", new armyc2.c2sd.renderer.utilities.RendererException("Failed inside RangeFanOrientation", exc));
