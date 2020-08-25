@@ -5364,7 +5364,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
           glyphPosition = new armyc2.c2sd.graphics2d.Point(x, y);
           //end section
           justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_center;
-          modifierPosition = new armyc2.c2sd.graphics2d.Point2D(x1, y);
+          modifierPosition = new armyc2.c2sd.graphics2d.Point2D(x1, y1);
           break;
         case 4:
           if (tg.Pixels.size() >= 14) {
