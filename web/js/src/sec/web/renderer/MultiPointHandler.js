@@ -1739,8 +1739,8 @@ sec.web.renderer.MultiPointHandler = (function () {
 
                 if (modifiers[ModifiersTG.W_DTG_1])
                     modifierMap[ModifiersTG.W_DTG_1] = modifiers[ModifiersTG.W_DTG_1];
-                else if (modifiers.dateTimeGroup1)
-                    modifierMap[ModifiersTG.W_DTG_1] = modifiers.dateTimeGroup1;
+                else if (modifiers.dateTimeGroup)
+                    modifierMap[ModifiersTG.W_DTG_1] = modifiers.dateTimeGroup;
 
                 if (modifiers[ModifiersTG.W1_DTG_2])
                     modifierMap[ModifiersTG.W1_DTG_2] = modifiers[ModifiersTG.W1_DTG_2];
@@ -2080,7 +2080,7 @@ sec.web.renderer.MultiPointHandler = (function () {
                         featureCollection.features.push(labelsToAdd);
                     }
 
-                }//*/
+                }
             }
             catch (err)
             {

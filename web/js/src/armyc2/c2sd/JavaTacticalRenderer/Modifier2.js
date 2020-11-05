@@ -1496,10 +1496,10 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
     var lineFactor = 0;
     var x = 0;
     var y = 0;
+    var x0 = 0;
+    var y0 = 0;
     var x1 = 0;
     var y1 = 0;
-    var x2 = 0;
-    var y2 = 0;
     for (j = 0; j < tg.modifiers.size(); j++) {
       modifier = tg.modifiers.get(j);
       if (modifier.textID === null || modifier.textID.isEmpty())
@@ -1516,13 +1516,13 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
       stringHeight = font.getSize();
       if (modifier.type === 3) {
         pt0 = modifier.textPath[0];
-        x1 = pt0.x;
-        y1 = pt0.y;
-        x = Math.floor(x1) - Math.floor(Math.floor(stringWidth) / 2);
-        y = Math.floor(y1) + Math.floor((stringHeight / 2)) + Math.floor((1.25 * lineFactor * stringHeight));
-        x2 = Math.floor(x1) + Math.floor(Math.floor(stringWidth) / 2);
-        y2 = Math.floor(y1) + Math.floor((stringHeight / 2)) + Math.floor((1.25 * lineFactor * stringHeight));
-        if (mbrPoly.contains(x, y) && mbrPoly.contains(x2, y2))
+        x0 = pt0.x;
+        y0 = pt0.y;
+        x = Math.floor(x0) - Math.floor(Math.floor(stringWidth) / 2);
+        y = Math.floor(y0) + Math.floor((stringHeight / 2)) + Math.floor((1.25 * lineFactor * stringHeight));
+        x1 = Math.floor(x0) + Math.floor(Math.floor(stringWidth) / 2);
+        y1 = Math.floor(y0) + Math.floor((stringHeight / 2)) + Math.floor((1.25 * lineFactor * stringHeight));
+        if (mbrPoly.contains(x, y) && mbrPoly.contains(x1, y1))
           modifier.fitsMBR = true;
         else
           modifier.fitsMBR = false;
@@ -1540,11 +1540,11 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.RemoveModifiers = function(tg, g2d, i
           pt3 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(ptCenter, pt1, pt1, 3, Math.abs((lineFactor) * stringHeight));
         else
           pt3 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(ptCenter, pt1, pt1, 2, Math.abs((lineFactor) * stringHeight));
-        x1 = pt2.x;
-        y1 = pt2.y;
-        x2 = pt3.x;
-        y2 = pt3.y;
-        if (mbrPoly.contains(x1, y1) && mbrPoly.contains(x2, y2))
+        x0 = pt2.x;
+        y0 = pt2.y;
+        x1 = pt3.x;
+        y1 = pt3.y;
+        if (mbrPoly.contains(x0, y0) && mbrPoly.contains(x1, y1))
           modifier.fitsMBR = true;
         else
           modifier.fitsMBR = false;
@@ -2624,12 +2624,12 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.getChange1Height = function(tg) {
       default:
         return 0;
     }
-    var x1 = tg.Pixels.get(0).x;
-    var y1 = tg.Pixels.get(0).y;
-    var x2 = tg.Pixels.get(1).x;
-    var y2 = tg.Pixels.get(1).y;
-    var deltax = x2 - x1;
-    var deltay = y2 - y1;
+    var x0 = tg.Pixels.get(0).x;
+    var y0 = tg.Pixels.get(0).y;
+    var x1 = tg.Pixels.get(1).x;
+    var y1 = tg.Pixels.get(1).y;
+    var deltax = x1 - x0;
+    var deltay = y1 - y0;
     height = Math.sqrt(deltax * deltax + deltay * deltay);
   } catch (exc) {
     if (Clazz.instanceOf(exc)) {
@@ -4801,46 +4801,46 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers = function(tg, g2d) 
       modifier = tg.modifiers.get(j);
       var lineFactor = modifier.lineFactor;
       s = modifier.text;
+      var x0 = 0;
+      var y0 = 0;
       var x1 = 0;
       var y1 = 0;
-      var x2 = 0;
-      var y2 = 0;
       pt = modifier.textPath[0];
+      x0 = pt.x;
+      y0 = pt.y;
+      pt = modifier.textPath[1];
       x1 = pt.x;
       y1 = pt.y;
-      pt = modifier.textPath[1];
-      x2 = pt.x;
-      y2 = pt.y;
-      theta = Math.atan2(y2 - y1, x2 - x1);
+      theta = Math.atan2(y1 - y0, x1 - x0);
       var midPt;
-      if (x1 > x2) {
+      if (x0 > x1) {
         theta -= 3.141592653589793;
       }
       switch (modifier.type) {
         case 1:
-          g2d.rotate(theta, x1, y1);
+          g2d.rotate(theta, x0, y0);
           stringWidth = metrics.stringWidth(s);
           stringHeight = font.getSize();
-          if (x1 < x2 || (x1 === x2 && y1 > y2)) {
-            x = Math.floor(x1) - stringWidth;
-            y = Math.floor(y1) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
+          if (x0 < x1 || (x0 === x1 && y0 > y1)) {
+            x = Math.floor(x0) - stringWidth;
+            y = Math.floor(y0) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
             g2d.setColor(tg.get_FontBackColor());
             g2d.clearRect(x, y, stringWidth, stringHeight);
-            y = Math.floor(y1) + Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
+            y = Math.floor(y0) + Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
             g2d.setColor(tg.get_TextColor());
             g2d.drawString(s, x, y);
           } else {
-            x = Math.floor(x1);
-            y = Math.floor(y1) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
+            x = Math.floor(x0);
+            y = Math.floor(y0) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
             g2d.setColor(tg.get_FontBackColor());
             g2d.clearRect(x, y, stringWidth, stringHeight);
-            y = Math.floor(y1) + Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
+            y = Math.floor(y0) + Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
             g2d.setColor(tg.get_TextColor());
             g2d.drawString(s, x, y);
           }
           break;
         case 2:
-          midPt = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2((x1 + x2) / 2, (y1 + y2) / 2);
+          midPt = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2((x0 + x1) / 2, (y0 + y1) / 2);
           g2d.rotate(theta, midPt.x, midPt.y);
           stringWidth = metrics.stringWidth(s);
           stringHeight = font.getSize();
@@ -4853,14 +4853,14 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers = function(tg, g2d) 
           g2d.drawString(s, x, y);
           break;
         case 3:
-          g2d.rotate(0, x1, y1);
+          g2d.rotate(0, x0, y0);
           stringWidth = metrics.stringWidth(s);
           stringHeight = font.getSize();
-          x = Math.floor(x1) - Math.floor(stringWidth / 2);
-          y = Math.floor(y1) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
+          x = Math.floor(x0) - Math.floor(stringWidth / 2);
+          y = Math.floor(y0) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
           g2d.setColor(tg.get_FontBackColor());
           g2d.clearRect(x, y, stringWidth, stringHeight);
-          y = Math.floor(y1) + (Math.floor(stringHeight / 2)) + Math.floor((lineFactor * stringHeight));
+          y = Math.floor(y0) + (Math.floor(stringHeight / 2)) + Math.floor((lineFactor * stringHeight));
           g2d.setColor(tg.get_TextColor());
           g2d.drawString(s, x, y);
           break;
@@ -4886,14 +4886,14 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers = function(tg, g2d) 
               default:
                 break;
             }
-            g2d.rotate(theta, x1, y1);
+            g2d.rotate(theta, x0, y0);
             stringWidth = metrics.stringWidth(s);
             stringHeight = font.getSize();
-            x = Math.floor(x1) - Math.floor(stringWidth / 2);
-            y = Math.floor(y1) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
+            x = Math.floor(x0) - Math.floor(stringWidth / 2);
+            y = Math.floor(y0) - Math.floor(stringHeight / 2) + Math.floor((lineFactor * stringHeight));
             g2d.setColor(tg.get_FontBackColor());
             g2d.clearRect(x, y, stringWidth, stringHeight);
-            y = Math.floor(y1) + (Math.floor(stringHeight / 2)) + Math.floor((lineFactor * stringHeight));
+            y = Math.floor(y0) + (Math.floor(stringHeight / 2)) + Math.floor((lineFactor * stringHeight));
             g2d.setColor(tg.get_TextColor());
             g2d.drawString(s, x, y);
           } else {
@@ -5196,38 +5196,38 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
       var bounds = metrics.getTextBounds(s);
       stringWidth = bounds.width / 1.5;
       stringHeight = bounds.height;
+      var x0 = 0;
+      var y0 = 0;
       var x1 = 0;
       var y1 = 0;
-      var x2 = 0;
-      var y2 = 0;
       var dist = 0;
       pt0 = modifier.textPath[0];
-      x1 = Math.round(pt0.x);
-      y1 = Math.round(pt0.y);
+      x0 = Math.round(pt0.x);
+      y0 = Math.round(pt0.y);
       pt1 = modifier.textPath[1];
-      x2 = Math.round(pt1.x);
-      y2 = Math.round(pt1.y);
-      theta = Math.atan2(y2 - y1, x2 - x1);
+      x1 = Math.round(pt1.x);
+      y1 = Math.round(pt1.y);
+      theta = Math.atan2(y1 - y0, x1 - x0);
       var midPt;
-      if (x1 > x2) {
+      if (x0 > x1) {
         theta -= 3.141592653589793;
       }
-      pt0 = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2(x1, y1);
-      pt1 = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2(x2, y2);
-      midPt = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2((x1 + x2) / 2, (y1 + y2) / 2);
+      pt0 = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2(x0, y0);
+      pt1 = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2(x1, y1);
+      midPt = armyc2.c2sd.JavaLineArray.lineutility.setPOINT2((x0 + x1) / 2, (y0 + y1) / 2);
       var justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_left;
       switch (modifier.type) {
         case 5: //aboveEnd
-          if (x1 === x2) {
-            x2 += 1;
+          if (x0 === x1) {
+            x1 += 1;
           }
 
-          if (x1 < x2) {
-            x = x1;
-            y = y1 + stringHeight / 2 + (lineFactor * stringHeight);
+          if (x0 < x1) {
+            x = x0;
+            y = y0 + stringHeight / 2 + (lineFactor * stringHeight);
           } else {
-            x = x1 - stringWidth;
-            y = y1 + stringHeight / 2 + (lineFactor * stringHeight);
+            x = x0 - stringWidth;
+            y = y0 + stringHeight / 2 + (lineFactor * stringHeight);
           }
           if (lineFactor >= 0) {
             direction = 2;
@@ -5240,7 +5240,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
           }
 
           //add section 6/22/15
-          if (x1 < x2)
+          if (x0 < x1)
             justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_right;
           else
             justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_left;
@@ -5256,8 +5256,8 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
           glyphPosition = new armyc2.c2sd.graphics2d.Point(pt3.x, pt3.y);
           break;
         case 1: //to end
-          if (x1 === x2) {
-            x2 += 1;
+          if (x0 === x1) {
+            x1 += 1;
           }
           dist = armyc2.c2sd.JavaLineArray.lineutility.CalcDistanceDouble(pt0, pt1);
           direction = 2;
@@ -5271,7 +5271,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
           pt2 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt1, pt0, pt1, direction, lineFactor * stringHeight);
           pt3 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt1, pt0, pt0, direction, lineFactor * stringHeight);
           //add setcion 6-22-15
-          if (x1 < x2)
+          if (x0 < x1)
             justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_right;
           else
             justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_left;
@@ -5323,11 +5323,11 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
             pt3 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0, pt2, pt2, 2, Math.abs((lineFactor) * stringHeight));
             midPt = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0, midPt, midPt, 2, Math.abs((lineFactor) * stringHeight));
           }
-          if (x1 === x2 && y1 > y2) {
+          if (x0 === x1 && y0 > y1) {
             pt3 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0, pt2, pt2, 1, Math.abs((lineFactor) * stringHeight));
             midPt = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0, midPt, midPt, 1, Math.abs((lineFactor) * stringHeight));
           }
-          if (x1 === x2 && y1 < y2) {
+          if (x0 === x1 && y0 < y1) {
             pt3 = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0, pt2, pt2, 0, Math.abs((lineFactor) * stringHeight));
             midPt = armyc2.c2sd.JavaLineArray.lineutility.ExtendDirectedLine(pt0, midPt, midPt, 0, Math.abs((lineFactor) * stringHeight));
           }
@@ -5341,12 +5341,12 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
           if(modifier.type === 6)//armyc2.c2sd.JavaTacticalRenderer.Modifier2.aboveMiddlePerpendicular
           {
             // Need to negate the original rotation
-            if(x1 > x2)
+            if(x0 > x1)
             {
               theta += Math.PI;
             }
             // Adjust the label rotation based on the y values
-            if(y1 > y2)
+            if(y0 > y1)
             {
               theta += Math.PI;
             }
@@ -5357,16 +5357,11 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
           break;
         case 3: //screen, cover, guard, area
           theta = 0;
-          x = x1 - stringWidth / 4;
-          y = y1 + stringHeight / 2 + 1.5 * lineFactor * stringHeight;
+          x = x0;
+          y = y0 + stringHeight / 2 + .5 * lineFactor * stringHeight;
           glyphPosition = new armyc2.c2sd.graphics2d.Point(x, y);
-          //diagnostic
-          x -= stringWidth / 2;
-          y -= stringHeight / 2;
-          glyphPosition = new armyc2.c2sd.graphics2d.Point(x, y);
-          //end section
           justify = armyc2.c2sd.renderer.utilities.ShapeInfo.justify_center;
-          modifierPosition = new armyc2.c2sd.graphics2d.Point2D(x1, y1);
+          modifierPosition = new armyc2.c2sd.graphics2d.Point2D(x, y);
           break;
         case 4:
           if (tg.Pixels.size() >= 14) {
@@ -5397,9 +5392,9 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.DisplayModifiers2 = function(tg, g2d,
               default:
                 break;
             }
-            x = Math.floor(x1) - Math.floor(Math.floor(stringWidth) / 2);
-            y = Math.floor(y1) - Math.floor(Math.floor(stringHeight) / 2) + Math.floor((lineFactor * stringHeight));
-            y = Math.floor(y1) + Math.floor((stringHeight / 2)) + Math.floor((lineFactor * stringHeight));
+            x = Math.floor(x0) - Math.floor(Math.floor(stringWidth) / 2);
+            y = Math.floor(y0) - Math.floor(Math.floor(stringHeight) / 2) + Math.floor((lineFactor * stringHeight));
+            y = Math.floor(y0) + Math.floor((stringHeight / 2)) + Math.floor((lineFactor * stringHeight));
           } else {
             theta = 0;
             x = Math.floor(tg.Pixels.get(0).x);
