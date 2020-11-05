@@ -3387,6 +3387,7 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
         break;
       case 23180000:
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.areasWithENY(tg, g2d);
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, tg.get_Name(), 3, -0.5 *csFactor, ptCenter, ptCenter, new Boolean(false));
         break;
       case 25330000:
       case 25351000:
