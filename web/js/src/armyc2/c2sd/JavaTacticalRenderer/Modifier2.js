@@ -3917,8 +3917,10 @@ armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddModifiersGeo = function(tg, g2d, c
         }
         break;
       case 24222000:
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, "PL " + tg.get_T1(), 1, 0, pt0, pt1, new Boolean(false));
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralModifier(tg, label + tg.get_Name(), 2, -1, middleSegment, middleSegment + 1, new Boolean(false));
         armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralModifier(tg, tg.get_DTG() + dash + tg.get_DTG1(), 2, 1, middleSegment, middleSegment + 1, new Boolean(false));
+        armyc2.c2sd.JavaTacticalRenderer.Modifier2.AddIntegralAreaModifier(tg, "PL " + tg.get_T1(), 1, 0, ptLast, ptNextToLast, new Boolean(false));
         break;
       case 24224000: //RFL
         pt0 = tg.Pixels.get(0);
