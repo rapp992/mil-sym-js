@@ -144,7 +144,7 @@ armyc2.c2sd.renderer.utilities.SymbolSVGDimensions = {};
                 case (59128 === index || index === 60128):
                 case (59142 === index || index === 60142):
                 case (59214 === index || index === 60214):
-                        rect = new Rectangle(-418,-1509,836,1509);
+                        rect = new Rectangle(-418,-1509,836,3018);
                         break;
                 case (59007 <= index && index <= 59018)://SONOBUOY
                 case (60007 <= index && index <= 60018)://SONOBUOY
